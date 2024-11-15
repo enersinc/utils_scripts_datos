@@ -100,11 +100,23 @@ class PostgresBackupRestore:
             except Exception as e:
                 print(f"Error al eliminar el archivo {file_path}: {e}")
 
-# Ejemplo de uso
+
+def validar_input(mensaje):
+    while True:
+        valor = input(mensaje)
+        if valor.isalpha():
+            return valor
+        else:
+            print("Por favor, ingrese solo texto (sin números ni caracteres especiales).")
+
 if __name__ == "__main__":
-    backup_restore = PostgresBackupRestore(table_name="", # Ingrese el valor de la tabla
-                                           source_schema="public",
-                                           target_schema="public_test")
+    table_name = validar_input("Ingrese la tabla de origen: ")
+    source_schema = validar_input("Ingrese el esquema de origen: ")
+    target_schema = validar_input("Ingrese el esquema de destino: ")
+    
+    backup_restore = PostgresBackupRestore(table_name=table_name, 
+                                           source_schema=source_schema,
+                                           target_schema=target_schema)
     try:
         backup_restore.backup_table()
         backup_restore.replace_schema()
@@ -113,3 +125,4 @@ if __name__ == "__main__":
         print(f"Ocurrió un error durante el proceso: {e}")
     finally:
         backup_restore.cleanup_files()
+        print('Finalizado')
