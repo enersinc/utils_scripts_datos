@@ -1,0 +1,19 @@
+CODIGO;DESCRIPCION;VALOR
+ALYH;Aportes ley 99 de 1993 para hidráulicos, en $/kWh;9.63841
+ALYT;Aportes ley 99 de 1993 para térmicos, en $/kWh;6.42561
+CERD;CERE mensual empleado para liquidación diaria, en $/kWh.;84.312
+CMCA;Costo de Operación y Mantenimiento (COM), para plantas con combustible principal carbón, en $/kWh.;34.0896499037
+CMGA;Costo de Operación y Mantenimiento (COM), para plantas con combustible principal gas, en $/kWh.;16.6263600193
+CMOT;Costo de Operación y Mantenimiento (COM), para plantas con combustible principal diferente a gas y carbón, en $/kWh.;25.3600834297
+CUAG;Costo unitario por Servicio Regulación Secundaria Frecuencia (AGC), en $/kWh.;4.2215723162
+IPCA;Valor del IPC base para la actualización del COM de carbón.;103.8
+IPCO;Valor del IPC del mes en curso para el cálculo del COM.;143.83
+IPGA;Valor del IPC base para la actualización del COM de gas.;103.8
+IPOT;Valor del IPC base para la actualización del COM de otros combustibles.;103.8
+IPP;Valor del IPP del mes en curso para la liquidación diaria.;180.49
+OCVH;Otros costos variables hidráulicos, en $/kWh.;101.3042823162
+OCVIF;Otros costos variables para recursos inflexibles, en $/kWh;100.1985769888
+OCVT;Otros costos variables térmicos, en $/kWh.;98.0914823162
+TCAP;Valor de la TRM utilizada para el cálculo del CAP (Costo de Arranque y Parada), en $/USD.;4413.46
+VRFP;Valor a pagar por regulación primaria de frecuencia, en $.;0
+VTAF;Tarifa FAZNI, en $/kWh.;3.1323

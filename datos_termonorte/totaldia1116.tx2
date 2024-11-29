@@ -1,0 +1,17 @@
+CODIGO;DESCRIPCION;PLANTA;VALOR
+CSCAC;Costo de suministro de combustible ACPM reportado por el agente en $/MBTU.;TRN1;102718.7
+CSCFO;Costo de suministro de combustible FOIL OIL reportado por el agente en $/MBTU.;TRN1;97823.81
+CSCGN;Costo de suministro de combustible gas natural reportado por el agente en $/MBTU.;TRN1;68139.4
+CSCIF;Costo de suministro de combustible para recursos inflexibles en $/kWh;TRN1;673.74203133792029595906918392427777104
+CSCN;Costo de suministro de combustible para efectos de la Res CREG 176 de 2015 en $/kWh;TRN1;681.124937415762793905846877534494815782
+CSCO;Costo de suministro de combustible principal + costo de suministro de combustible alterno en $/kWh.;TRN1;681.110667835265884017613656838716327064
+CSCP;Costo de suministro de combustible principal calculado en $.;TRN1;1043149042.73811783597473800095501924162
+CTCAC;Costo de transporte de combustible ACPM reportado por el agente en $/MBTU.;TRN1;0
+CTCFO;Costo de transporte de combustible FOIL OIL reportado por el agente en $/MBTU.;TRN1;0
+CTCGN;Costo de transporte de combustible gas natural reportado por el agente en $/MBTU.;TRN1;13383.48
+CTCIF;Costo de transporte de combustible para recursos inflexibles en $/kWh.;TRN1;127.172942518960739089691923564054458235
+CTCN;Costo de transporte de combustible para efectos de la Res CREG 176 de 2015 en $/kWh;TRN1;130.364258121276927819291832892499634418
+CTCO;Costo de transporte de combustible principal + costo de transporte de combustible alterno en $/kWh.;TRN1;130.514808682068314726159716071457604386
+CTCP;Costo de transporte de combustible principal calculado en $.;TRN1;199888805.401557238396997175682142304456
+ENTX;Valor de consumo principal proporcional a la reconciliación positiva en MBTU.;TRN1;15183.2895483841260311807562647821927767
+RECO;Reconciliación positiva para el PR de la Resolución CREG 084 de 2005 en kWh.;TRN1;1531541.19

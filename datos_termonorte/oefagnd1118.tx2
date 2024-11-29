@@ -1,0 +1,8 @@
+CONCEPTO;DESCRIPCION;VALOR
+DDOEF;Desviación Diaria de Obligación de Energía Firme para el agente generador en kWh/día.;-620792.19168399089205888051433710231217
+DDOEFSIS;Desviación Diaria de Obligación de Energía Firme Negativa para el Sistema en kWh/Día;-49286509.637935571948116839595555381575
+GI;Generación Ideal Nacional sin considerar contratos de respaldo despachados en kWh/día.;1244645.91
+GID;Generación Ideal Nacional considerando contratos de respaldo despachados en kWh/día.;1244645.91
+NDCAG;Liquidación de todas las Plantas No despachadas Centralmente pertenecientes a un Agente en $.;0
+OEFD;Obligación de Energía Firme diaria para el agente generador en kWh/día.;1908744.28038777790984694413400535092205
+OEFDA;Obligación de la Energía Firme diaria ajustada para el agente generador en kWh/día.;1865438.10168399089205888051433710231217

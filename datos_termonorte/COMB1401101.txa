@@ -1,0 +1,6 @@
+PLANTA;CONCEPTO;DESCRIPCION;VALOR
+TRN1;ACPM;Costo Suministro Combustible Por Tipo Combustible DEFINITIVO;97656.56135
+TRN1;ACPM;Costo Suministro Combustible Por Tipo Combustible ORIGINAL;97656.56135
+TRN1;ACPM;Costo Variable Por Tipo Combustible [$/Kwh] ;1005.01806011324531262340062868598455142
+TRN1;ACPM;Porcentaje De Oef Por Tipo Combustible DEFINITIVO;1
+TRN1;ACPM;Porcentaje De Oef Por Tipo Combustible ORIGINAL;1
