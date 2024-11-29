@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
+import requests
 
 # Cargar las variables de entorno desde el archivo .env
 load_dotenv()
@@ -16,12 +17,43 @@ PG_DB = os.getenv('ETRM_PG_DB')
 # Crear la cadena de conexión a PostgreSQL usando SQLAlchemy
 DATABASE_URL = f"postgresql://{PG_USER}:{PGPASSWORD}@{PG_HOST}:{PG_PORT}/{PG_DB}"
 
+# Credenciales del servicio para obtener el token
+SERVICE_USER = os.getenv('WHATSAPP_SERVICE_USER')
+SERVICE_PASSWORD = os.getenv('WHATSAPP_SERVICE_PASSWORD')
+
 # Crea el motor de SQLAlchemy
 engine = create_engine(DATABASE_URL)
 
 # Crea una sesión
 Session = sessionmaker(bind=engine)
 session = Session()
+
+
+def obtener_token():
+    """
+    Obtiene un token desde el endpoint de autenticación.
+
+    :return: Token de autenticación si es exitoso, None si hay un error.
+    """
+    url = "https://reportes.enersinc.com/signin"
+    body_request = {
+        "email": SERVICE_USER,
+        "password": SERVICE_PASSWORD
+    }
+    try:
+        response = requests.post(url, json=body_request, verify=False)
+        response.raise_for_status()  # Lanza una excepción si ocurre un error
+        json_response = response.json()
+        token = json_response.get("token")  # Asume que el token está en la clave 'token'
+        if token:
+            return token
+        else:
+            print("No se encontró un token en la respuesta del endpoint.")
+            return None
+    except requests.exceptions.RequestException as e:
+        print(f"Error al obtener el token: {e}")
+        return None
+    
 
 def obtener_clientes_por_concepto(concepto):
     """
@@ -50,7 +82,6 @@ def obtener_clientes_por_concepto(concepto):
     finally:
         session.close()
 
-import requests
 
 def ejecutar_endpoints(concepto, fecha, token, clientes):
     """
@@ -95,13 +126,19 @@ def ejecutar_endpoints(concepto, fecha, token, clientes):
 
     return respuestas
 
-# Ejemplo de uso
 if __name__ == "__main__":
     concepto = "5"  # Reemplaza con el concepto deseado
-    fecha = "2024-11-28"  # Reemplaza con la fecha deseada
-    token = """********"""  # Reemplaza con tu Bearer Token real
+    fecha = "2024-11-29"  # Reemplaza con la fecha deseada
+    # Obtener el token
+    token = obtener_token()
+    if not token:
+        print("No se pudo obtener el token. Abortando ejecución.")
+        exit(1)
     
-    clientes = obtener_clientes_por_concepto(concepto)
+    # Obtener la lista de clientes
+    clientes = ['prueba3']
+    if not clientes:
+        clientes = obtener_clientes_por_concepto(concepto)
     print("Clientes encontrados:", clientes)
     resultados = ejecutar_endpoints(concepto, fecha, token, clientes)
     print("Resultados finales:", resultados)
